@@ -1,4 +1,4 @@
-# PassionProject
+# PassionProject - Chord Companion
 
 Current state:
   - Tables are added with content
