@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PassionProject.Models.SongDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@foreach(var song in Model)
+            {
+                    <div>
+                        <h3>@song.SongName</h3>
+                        <ul>
+                            <li>Artist: @song.SongArtist</li>
+                            <li>Difficulty: @song.SongDifficulty</li>
+                            <li>Chord Code: @song.SongChords</li>
+                        </ul>
+                    </div>
+
+               /*<table>
+                   <tr>
+                       <td>@song.SongName</td>
+                   </tr>
+                   <tr>
+                       <td>Artist: @song.SongArtist</td>
+                       <td>Difficulty: @song.SongDifficulty</td>
+                       <td>Chord Code: @song.SongChords</td>
+                   </tr>
+               </table>*/
+            }
+

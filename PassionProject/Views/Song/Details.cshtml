@@ -1,0 +1,17 @@
+﻿@model PassionProject.Models.SongDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>@Model.SongName</h3>
+    <ul>
+        <li>Artist: @Model.SongArtist</li>
+        <li>Difficulty: @Model.SongDifficulty</li>
+        <li>Chord Code: @Model.SongChords</li>
+    </ul>
+</div>
+<!-- Add a link to return to song list-->
+<a href="/Song/List"> Return to Song List</a>
+
