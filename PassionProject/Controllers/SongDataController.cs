@@ -18,7 +18,7 @@ namespace PassionProject.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         [HttpGet]
         // GET: api/SongData/ListSongs
-        public IEnumerable<SongDto> ListSongs()
+        public IEnumerable<SongDto> List()
         {
             List<Song> Songs = db.Songs.ToList();
             List<SongDto> SongDtos = new List<SongDto>();

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a Song</h2>
+
+<form action="/Song/Create" method="POST">
+    <div>
+        <label> Song Title:</label>
+        <input type="text" name="SongName" />
+    </div>
+    <div>
+        <label> Artist:</label>
+        <input type="text" name="SongArtist" />
+    </div>
+    <div>
+        <label> Difficulty:</label>
+        <select name="SongDifficulty">
+            <option value="Beginner"> Beginner </option>
+            <option value="Easy"> Easy </option>
+            <option value="Medium"> Medium </option>
+            <option value="Hard"> Hard </option>
+        </select>
+    </div>
+    <div>
+        <label>Choose chords</label>
+        <select name="SongChords">
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+            <option value=13>13</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Song" />
+    </div>
+</form>
+
+<!--SongName, SongArtist, SongDifficulty, SongChords-->

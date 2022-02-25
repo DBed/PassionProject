@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a Chord</h2>
+
+<form action="/Chord/Create" method="POST">
+    <div>
+        <label>Chord Name: </label>
+        <input type="text" name="ChordName" />
+    </div>
+    <div class="fret_choice">
+        <label>First string fret: </label>
+        <select name="StringOne">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div class="fret_choice">
+        <label>Second string fret: </label>
+        <select name="StringTwo">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div class="fret_choice">
+        <label>Third string fret: </label>
+        <select name="StringThree">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div class="fret_choice">
+        <label>Fourth string fret: </label>
+        <select name="StringFour">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div class="fret_choice">
+        <label>Fifth string fret: </label>
+        <select name="StringFive">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div class="fret_choice">
+        <label>Sixth string fret: </label>
+        <select name="StringSix">
+            <option value="X">Muted</option>
+            <option value="O">Open</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Chord" />
+    </div>
+</form>
+

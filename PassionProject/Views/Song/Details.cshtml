@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = "Details";
 }
+<nav>
+    <ul>
+        <li><a href="/Song/List">Songs</a></li>
+        <li><a href="/Chord/List">Chords</a></li>
+        <li><a href="/SongChord/List">Chord Sets</a></li>
+    </ul>
+</nav>
 
 <div>
     <h3>@Model.SongName</h3>
@@ -12,6 +19,7 @@
         <li>Chord Code: @Model.SongChords</li>
     </ul>
 </div>
+<a style="color:#ab2020;" href="/Song/DeleteConfirm/@Model.SongID">Delete</a>
 <!-- Add a link to return to song list-->
 <a href="/Song/List"> Return to Song List</a>
 

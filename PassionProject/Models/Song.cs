@@ -30,7 +30,6 @@ namespace PassionProject.Models
         public string SongName { get; set; }
         public string SongArtist { get; set; }
         public string SongDifficulty { get; set; }
-
         public int SongChords { get; set; }
     }
 }

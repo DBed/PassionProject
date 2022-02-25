@@ -181,8 +181,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChordController.cs" />
+    <Compile Include="Controllers\ChordDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SongChordController.cs" />
+    <Compile Include="Controllers\SongChordDataController.cs" />
     <Compile Include="Controllers\SongController.cs" />
     <Compile Include="Controllers\SongDataController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +238,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="jsondata\Song.json" />
+    <Content Include="jsondata\Chord.json" />
+    <Content Include="jsondata\SongChord.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -281,9 +287,21 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Song\List.cshtml" />
     <Content Include="Views\Song\Details.cshtml" />
+    <Content Include="Views\Chord\List.cshtml" />
+    <Content Include="Views\SongChord\List.cshtml" />
+    <Content Include="Views\SongChord\Details.cshtml" />
+    <Content Include="Views\Chord\Details.cshtml" />
+    <Content Include="Views\Chord\New.cshtml" />
+    <Content Include="Views\Song\New.cshtml" />
+    <Content Include="Views\SongChord\New.cshtml" />
+    <Content Include="Views\Song\DeleteConfirm.cshtml" />
+    <Content Include="Views\SongChord\DeleteConfirm.cshtml" />
+    <Content Include="Views\Chord\DeleteConfirm.cshtml" />
+    <Content Include="Views\Song\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

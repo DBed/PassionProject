@@ -1,0 +1,17 @@
+﻿@model PassionProject.Models.Song
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this song?</h2>
+<a href="/Song/List">Cancel - Return to list</a>
+<h2>@Model.SongName</h2>
+<div>Artist: @Model.SongArtist</div>
+<div>Difficulty: @Model.SongDifficulty</div>
+<div>Chords: @Model.SongChords</div>
+
+<form action="/Song/Delete/@Model.SongID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>
+

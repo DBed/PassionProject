@@ -1,0 +1,10 @@
+﻿{
+  "ChordID" : 10,
+  "ChordName" : "D7",
+  "StringOne" : "X",
+  "StringTwo": "X",
+  "StringThree": "O",
+  "StringFour": 3,
+  "StringFive": 2,
+  "StringSix" : 3
+}

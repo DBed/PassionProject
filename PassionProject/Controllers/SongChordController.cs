@@ -10,88 +10,88 @@ using System.Web.Script.Serialization;
 
 namespace PassionProject.Controllers
 {
-    public class SongController : Controller
+    public class SongChordController : Controller
     {
+
         private static readonly HttpClient client;
 
         private JavaScriptSerializer jss = new JavaScriptSerializer();
 
-        static SongController()
+        static SongChordController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44300/api/songdata/");
+            client.BaseAddress = new Uri("https://localhost:44300/api/songchorddata/");
         }
-        // GET: Song/List
+        // GET: SongChord/List
         public ActionResult List()
         {
-            //Use song data to retrieve a list of songs
-            string url = "songdata/list";
+            //fetch a list of SongChord IDs
+            //curl https://localhost:44300/api/songchorddata/listsongchords
+            string url = "listsongchords";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
-            Debug.WriteLine("the response code is ");
+            Debug.WriteLine("The response code is ");
             Debug.WriteLine(response.StatusCode);
 
-            IEnumerable<SongDto> songs = response.Content.ReadAsAsync<IEnumerable<SongDto>>().Result;
-            //Show the total number of songs in the console.
-            Debug.WriteLine("Number of songs received:");
-            Debug.WriteLine(songs.Count());
-
-
-            return View(songs);
+            IEnumerable<SongChord> songchords = response.Content.ReadAsAsync<IEnumerable<SongChord>>().Result;
+            Debug.WriteLine("Number of Song Chord IDs in list: ");
+            Debug.WriteLine(songchords.Count());
+            
+            return View(songchords);
         }
 
-        // GET: Song/Details/5
+        // GET: SongChord/Details/5
         public ActionResult Details(int id)
         {
-            string url = "songdata/findsong/"+id;
+            //fetch one song chord set
+            //curl https://localhost:44300/api/songchorddata/findsongchord/{id}
+            string url = "findsongchord/"+id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
-            Debug.WriteLine("the response code is ");
+            Debug.WriteLine("The response code is ");
             Debug.WriteLine(response.StatusCode);
 
-            SongDto selectedsong = response.Content.ReadAsAsync<SongDto>().Result;
-            //Show the total number of songs in the console.
-            Debug.WriteLine("Song received:");
-            Debug.WriteLine(selectedsong.SongName);
-           
-            return View(selectedsong);
+            SongChord selectedsongchord = response.Content.ReadAsAsync<SongChord>().Result;
+            Debug.WriteLine("Song Chord Set received: ");
+            Debug.WriteLine(selectedsongchord.ChordGroupID);
+
+            return View(selectedsongchord);
         }
 
-        // GET: Song/New
+        // GET: SongChord/New
         public ActionResult New()
         {
-
             return View();
         }
 
-        // POST: Song/Create
+        // POST: SongChord/Create
         [HttpPost]
-        public ActionResult Create(Song song)
+        public ActionResult Create(SongChord songchord)
         {
             Debug.WriteLine("the json payload is: ");
-            Debug.WriteLine(song.SongName);
-            
-            string url = "songdata/addsong";
+            Debug.WriteLine(songchord.ChordGroupID);
 
-            string jsonpayload = jss.Serialize(song);
+            string url = "addsongchord";
+
+            string jsonpayload = jss.Serialize(songchord);
 
             Debug.WriteLine(jsonpayload);
 
             HttpContent content = new StringContent(jsonpayload);
             content.Headers.ContentType.MediaType = "application/json";
-            
+
             client.PostAsync(url, content);
 
             return RedirectToAction("List");
         }
 
-        // GET: Song/Edit/5
+        // GET: SongChord/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Song/Edit/5
+        // POST: SongChord/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -107,20 +107,20 @@ namespace PassionProject.Controllers
             }
         }
 
-        // GET: Song/Delete/5
+        // GET: SongChord/Delete/5
         public ActionResult DeleteConfirm(int id)
         {
-            string url = "songdata/findsong/" + id;
+            string url = "findsongchord/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
-            Song selectedsong = response.Content.ReadAsAsync<Song>().Result;
-            return View(selectedsong);
+            SongChord selectedsongchord = response.Content.ReadAsAsync<SongChord>().Result;
+            return View(selectedsongchord);
         }
 
-        // POST: Song/Delete/5
+        // POST: SongChord/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            string url = "deletesong/" + id;
+            string url = "deletesongchord/" + id;
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;

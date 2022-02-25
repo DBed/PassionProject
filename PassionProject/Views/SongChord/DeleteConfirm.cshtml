@@ -1,0 +1,19 @@
+﻿@model PassionProject.Models.SongChord
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Chord Set?</h2>
+<a href="/SongChord/List">Cancel - Return to list</a>
+
+<div>Chord One: @Model.ChordOne</div>
+<div>Chord Two: @Model.ChordTwo</div>
+<div>Chord Three: @Model.ChordThree</div>
+<div>Chord Four: @Model.ChordFour</div>
+
+
+<form action="/SongChord/Delete/@Model.ChordGroupID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>
+

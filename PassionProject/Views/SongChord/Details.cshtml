@@ -1,0 +1,26 @@
+﻿@model PassionProject.Models.SongChord
+@{
+    ViewBag.Title = "Details";
+}
+<nav>
+    <ul>
+        <li><a href="/Song/List">Songs</a></li>
+        <li><a href="/Chord/List">Chords</a></li>
+        <li><a href="/SongChord/List">Chord Sets</a></li>
+    </ul>
+</nav>
+
+<h1>Song Chord Set</h1>
+<h2>@Model.ChordGroupID</h2>
+
+<div>
+    <ul>
+        <li>First Chord: @Model.ChordOne</li>
+        <li>Second Chord: @Model.ChordTwo</li>
+        <li>Third Chord: @Model.ChordThree</li>
+        <li>Fourth Chord: @Model.ChordFour</li>
+    </ul>
+</div>
+
+<a style="color:#ab2020;" href="/SongChord/DeleteConfirm/@Model.ChordGroupID">Delete</a>
+<a href="/SongChord/List">Return to Song Chord Set list</a>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PassionProject.Models.SongChord>
+@{
+    ViewBag.Title = "List";
+}
+
+<nav>
+    <ul>
+        <li><a href="/Song/List">Songs</a></li>
+        <li><a href="/Chord/List">Chords</a></li>
+        <li><a href="/SongChord/List">Chord Sets</a></li>
+    </ul>
+</nav>
+<h2>Song Chord Sets</h2>
+@foreach (var songchord in Model)
+{
+
+    <h2><a href="/SongChord/Details/@songchord.ChordGroupID">@songchord.ChordGroupID</a></h2>
+    <ul>
+        <li>First Chord: @songchord.ChordOne</li>
+        <li>Second Chord: @songchord.ChordTwo</li>
+        <li>Third Chord: @songchord.ChordThree</li>
+        <li>Fourth Chord: @songchord.ChordFour</li>
+    </ul>
+}
+
+<div><a href="/SongChord/New">Add a new Song Chord Set</a></div>

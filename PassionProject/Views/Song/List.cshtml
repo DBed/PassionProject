@@ -2,29 +2,27 @@
 @{
     ViewBag.Title = "List";
 }
+<nav>
+    <ul>
+        <li><a href="/Song/List">Songs</a></li>
+        <li><a href="/Chord/List">Chords</a></li>
+        <li><a href="/SongChord/List">Chord Sets</a></li>
+    </ul>
+</nav>
 
-<h2>List</h2>
+<h2>Songs</h2>
 
 @foreach(var song in Model)
             {
                     <div>
-                        <h3>@song.SongName</h3>
+                        <a href="/Song/Details/@song.SongID"><h3>@song.SongName</h3></a>
                         <ul>
                             <li>Artist: @song.SongArtist</li>
                             <li>Difficulty: @song.SongDifficulty</li>
                             <li>Chord Code: @song.SongChords</li>
                         </ul>
                     </div>
-
-               /*<table>
-                   <tr>
-                       <td>@song.SongName</td>
-                   </tr>
-                   <tr>
-                       <td>Artist: @song.SongArtist</td>
-                       <td>Difficulty: @song.SongDifficulty</td>
-                       <td>Chord Code: @song.SongChords</td>
-                   </tr>
-               </table>*/
             }
+
+<div><a href="/Song/New">Add a new Song</a></div>
 
